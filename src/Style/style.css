@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -8,6 +9,7 @@ body {
   font-family: Inter, sans-serif;
   display: flex;
   flex-direction: column;
+  background-color: #111013;
 }
 
 header {
@@ -15,7 +17,13 @@ header {
   flex-direction: row;
   height: auto;
   justify-content: space-between;
-  background-color: rgb(69, 69, 151);
+  gap: 20px;
+}
+
+header :hover {
+  background-color: sandybrown;
+  border: 2px solid sandybrown;
+  border-radius: 10px;
 }
 
 header nav {
@@ -27,7 +35,7 @@ header nav {
 
 header a {
   text-decoration: none;
-  color: #000;
+  color: #fff;
 }
 
 nav ul li a {
@@ -67,9 +75,9 @@ nav ul {
 
 footer {
   padding: 12px;
-  background-color: blueviolet;
-  color: #fff;
-  border: 1px solid  rgb(0, 0, 255);
+  background-color: rgb(240, 240, 231);
+  color: #000;
+  border: 1px solid  rgb(233, 193, 14);
   text-align: center;
   border-radius: 10px;
   display: flex;
@@ -120,7 +128,7 @@ header h1 {
 }
 
 #card button:hover {
-  background-color: #0032e9;
+  background-color: #fff;
 }
 
 .name_likes {
