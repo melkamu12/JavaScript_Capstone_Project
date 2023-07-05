@@ -12,10 +12,10 @@ const getCard = (MealData) => {
   return card;
 };
 const displayMeals = (MealData) => {
-  const mealElement = document.getElementById("homepage");
+  const mealElement = document.getElementById('homepage');
   MealData.forEach((meal) => {
     const card = getCard(meal);
-    mealElement.insertAdjacentHTML("beforeend", card);
+    mealElement.insertAdjacentHTML('beforeend', card);
   });
 };
 
