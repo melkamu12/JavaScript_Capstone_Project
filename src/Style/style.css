@@ -208,6 +208,12 @@ label {
   align-items: center;
 }
 
+.setInstruct {
+  overflow: visible;
+  padding-right: 30px;
+  text-align: justify;
+}
+
 .input_name,
 .comment_input {
   margin-bottom: 10px;

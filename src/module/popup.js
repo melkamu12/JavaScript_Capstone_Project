@@ -27,7 +27,8 @@ const displayCommentModal = async (mealId) => {
     <div class="mealDetails">
       <label>country:</label>${mealdetails.strArea}</h3><br>
       <label>Ingredient:</label>${mealdetails.strIngredient1},${mealdetails.strIngredient2},${mealdetails.strIngredient3}</h3>
-    </div>
+      <p class="setInstruct"><b>Set of Instructions: </b>${mealdetails.strInstructions}</p>
+      </div>
     <div id="comment-section">
       <h1><span class="count"></span></h1>
       <ul class="comment-box"></ul>
