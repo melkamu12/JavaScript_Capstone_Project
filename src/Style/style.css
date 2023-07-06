@@ -9,7 +9,7 @@ body {
   font-family: Inter, sans-serif;
   display: flex;
   flex-direction: column;
-  background-color: #111013;
+  background-color: rgb(233, 224, 224);
 }
 
 header {
@@ -35,18 +35,18 @@ header nav {
 
 header a {
   text-decoration: none;
-  color: #fff;
+  color: #000;
 }
 
 nav ul li a {
   text-decoration: none;
-  color: #000;
+  color: rgb(29, 27, 27);
 }
 
 nav ul li a,
 .btn {
   text-decoration: none;
-  color: #fff;
+  color: #000;
   margin-right: 5vw;
   font-size: 17px;
   transition: font-weight 0.3s ease-in-out, font-size 0.3s ease-in-out;
