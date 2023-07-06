@@ -1,7 +1,6 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
@@ -9,7 +8,7 @@ body {
   font-family: Inter, sans-serif;
   display: flex;
   flex-direction: column;
-  background-color: rgb(233, 224, 224);
+  overflow-x: hidden;
 }
 
 header {
@@ -17,13 +16,7 @@ header {
   flex-direction: row;
   height: auto;
   justify-content: space-between;
-  gap: 20px;
-}
-
-header :hover {
-  background-color: sandybrown;
-  border: 2px solid sandybrown;
-  border-radius: 10px;
+  background-color: rgb(69, 69, 151);
 }
 
 header nav {
@@ -40,13 +33,13 @@ header a {
 
 nav ul li a {
   text-decoration: none;
-  color: rgb(29, 27, 27);
+  color: #000;
 }
 
 nav ul li a,
 .btn {
   text-decoration: none;
-  color: #000;
+  color: #fff;
   margin-right: 5vw;
   font-size: 17px;
   transition: font-weight 0.3s ease-in-out, font-size 0.3s ease-in-out;
@@ -73,11 +66,16 @@ nav ul {
   padding: 3rem;
 }
 
+.homepage.disabled {
+  pointer-events: none;
+  filter: blur(5px);
+}
+
 footer {
   padding: 12px;
-  background-color: rgb(240, 240, 231);
-  color: #000;
-  border: 1px solid  rgb(233, 193, 14);
+  background-color: blueviolet;
+  color: #fff;
+  border: 1px solid  rgb(0, 0, 255);
   text-align: center;
   border-radius: 10px;
   display: flex;
@@ -100,9 +98,15 @@ header h1 {
   border: 1px solid #ccc;
   border-radius: 4px;
   padding: 15px;
-  margin-bottom: 10px;
-  box-shadow: 0 2px 4px rgba(9, 63, 225, 0.1);
+  box-shadow: 0 3px 5px rgba(9, 63, 225, 0.1);
   flex-direction: column;
+}
+
+.details img {
+  display: block;
+  margin: 0 auto;
+  width: auto;
+  height: 50vh;
 }
 
 #card img {
@@ -114,10 +118,13 @@ header h1 {
 
 #card p {
   margin: 8px 0;
+  height: 3vh;
 }
 
 #card button {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 12px;
   padding: 6px 10px;
   font-size: 20px;
@@ -128,7 +135,7 @@ header h1 {
 }
 
 #card button:hover {
-  background-color: #fff;
+  background-color: #0032e9;
 }
 
 .name_likes {
@@ -142,9 +149,158 @@ header h1 {
   text-align: right;
 }
 
+/* Modal of the comment */
+.modal {
+  display: none;
+  position: fixed;
+  top: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 95vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: rgba(132, 113, 113, 0.9);
+  border: 2px solid #000;
+  border-radius: 5px;
+  z-index: 99;
+  backdrop-filter: blur(5px);
+}
+
+.modal::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  z-index: -1;
+}
+
+.modal-container {
+  width: 100%;
+  padding: 5% 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  font-style: normal;
+  font-weight: 800;
+}
+
+.details h3 {
+  padding: 15px;
+  text-align: center;
+}
+
+.modal-body h2 {
+  margin-top: 0;
+}
+
+.commentForm {
+  display: flex;
+  width: 100%;
+  padding: 20px 60px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input_name,
+.comment_input {
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.submit_comment {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  background-color: hsl(122, 39%, 49%);
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+}
+
+.submit_comment:hover {
+  background-color: #45a049;
+}
+
+.submit_comment:active {
+  background-color: #3e8e41;
+}
+
+.comment_input {
+  width: 75%;
+  height: 100px;
+  margin-bottom: 10px;
+  resize: none;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.input_name {
+  width: 75%;
+  height: auto;
+  margin-bottom: 10px;
+  resize: none;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.submit-comment {
+  background-color: #fff;
+  color: rgb(8, 4, 4);
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 2px;
+  right: 10px;
+  font-weight: 900;
+  background-color: transparent;
+  color: rgba(247, 12, 12, 0.791);
+  border: none;
+  border-radius: 5px;
+  padding: 11px 16px;
+  cursor: pointer;
+}
+
+.submit-comment:hover,
+.close-modal:hover {
+  background-color: #0056b3;
+}
+
+.like-btn {
+  cursor: pointer;
+  font-size: 16px;
+  color: #000;
+}
+
+.like-btn.liked {
+  color: red;
+}
+
 @media screen and (max-width: 768px) {
   .homepage {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     padding: 1rem;
     min-width: 12rem;
   }
