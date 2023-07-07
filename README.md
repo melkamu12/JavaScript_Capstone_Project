@@ -77,13 +77,14 @@ A popup window with more data about an item that you can use to comment on it or
 
  ## 🚀 Live Demo <a name="live-demo"></a>
 
-<!-- - [Live Demo Link]() -->
+[Live Demo Link](https://melkamu12.github.io/JavaScript_Capstone_Project/)
 
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
+ ## 🎥 Video Walkthrough
+[Live video]()
 <!-- GET STARTED -->
 ## <b>Getting Started 💻</b><a name="getting-started"></a>
 
