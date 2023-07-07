@@ -1,5 +1,5 @@
 import displayCommentModal from './popup.js';
-import setLikes from './set_getLikes.js';
+import { setLikes, getLikes } from './set_getLikes.js';
 
 const getCard = (MealData) => {
   const card = `
@@ -15,6 +15,19 @@ const getCard = (MealData) => {
   return card;
 };
 
+const displayLikes = async (id) => {
+  const dataLikes = await getLikes();
+  const countOfLikes = document.querySelector(
+    `#card[data-meal-id="${id}"] .likes-counter`,
+  );
+
+  // Find the item with the matching item_id and get its likes count
+  const likesItem = dataLikes.find((item) => item.item_id === id);
+  const likesCount = likesItem ? likesItem.likes : 0;
+
+  countOfLikes.textContent = `${likesCount} likes`;
+};
+
 const displayMeals = async (MealData) => {
   const mealElement = document.getElementById('homepage');
 
@@ -22,6 +35,7 @@ const displayMeals = async (MealData) => {
     MealData.map(async (meal) => {
       const card = getCard(meal);
       mealElement.insertAdjacentHTML('beforeend', card);
+      await displayLikes(meal.idMeal);
     }),
   );
   // Like Button action Listener
@@ -32,6 +46,7 @@ const displayMeals = async (MealData) => {
       // const meal = MealData.find((meal) => meal.idMeal === mealId);
       try {
         await setLikes(mealId);
+        await displayLikes(mealId);
         const icon = this.querySelector('.far');
         if (icon) {
           icon.classList.toggle('fas');
