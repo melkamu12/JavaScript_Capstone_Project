@@ -67,6 +67,8 @@ A popup window with more data about an item that you can use to comment on it or
 
 - **Adding a new item**
 - **Displaying item on the page**
+- **the Involvement API**
+- **the Async Function**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <hr>
@@ -199,8 +201,6 @@ This project was deployed using GitHub Pages. For more information about how to 
 ## <b>Future Features 🔭</b><a name="future-features"></a>
 
 - **Make the app responsive**
-- **the Involvement API**
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
