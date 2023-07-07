@@ -1,3 +1,6 @@
+import { setComment } from './set_getComment.js';
+import loadComments from './LoadComment.js';
+
 const closeModal = () => {
   const commentModal = document.getElementById('commentModal');
   commentModal.style.display = 'none';
@@ -16,6 +19,7 @@ const displayCommentModal = async (mealId) => {
   document.getElementById('homepage').classList.add('disabled');
   const commentModal = document.getElementById('commentModal');
   const mealdetails = await fetchMealDetails(mealId);
+  loadComments(mealId);
   commentModal.innerHTML = '';
   const modalContent = `
   <button class="close-modal close">X</button>
@@ -48,9 +52,16 @@ const displayCommentModal = async (mealId) => {
   const submitBtn = commentModal.querySelector('.submit_comment');
   closeBtn.addEventListener('click', closeModal);
   commentModal.style.display = 'block';
+  loadComments(mealId);
 
   submitBtn.addEventListener('click', async (event) => {
     event.preventDefault();
+    const form = commentModal.querySelector('form');
+    const userNames = document.querySelector('.input_name').value;
+    const UsersComment = document.querySelector('.comment_input').value;
+    await setComment(mealId, userNames, UsersComment);
+    loadComments(mealId);
+    form.reset();
   });
 };
 export default displayCommentModal;
