@@ -1,9 +1,10 @@
 import { getComments } from './set_getComment.js';
+import Commentcounter from './totalcoment.js';
 
 const loadComments = async (id) => {
   try {
     const result = await getComments(id);
-    const commentLength = 10;
+    const commentLength = Commentcounter(result);
     const comments = document.querySelector('.comment-box');
     const commentCount = document.querySelector('.count');
 
