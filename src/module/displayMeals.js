@@ -1,4 +1,5 @@
 import displayCommentModal from './popup.js';
+import setLikes from './set_getLikes.js';
 
 const getCard = (MealData) => {
   const card = `
@@ -23,6 +24,27 @@ const displayMeals = async (MealData) => {
       mealElement.insertAdjacentHTML('beforeend', card);
     }),
   );
+  // Like Button action Listener
+  const likes = document.querySelectorAll('.like-btn');
+  likes.forEach((like) => {
+    like.addEventListener('click', async function handleLikeClick() {
+      const { mealId } = this.dataset;
+      // const meal = MealData.find((meal) => meal.idMeal === mealId);
+      try {
+        await setLikes(mealId);
+        const icon = this.querySelector('.far');
+        if (icon) {
+          icon.classList.toggle('fas');
+          icon.classList.toggle('far');
+          icon.style.color = 'red';
+        } else {
+          this.style.color = 'white';
+        }
+      } catch (error) {
+        throw new Error('error');
+      }
+    });
+  });
   // Comment Button action Listener
   const commentButtons = document.querySelectorAll('.comment');
   commentButtons.forEach((button) => {
