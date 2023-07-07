@@ -160,7 +160,7 @@ header h1 {
   height: 95vh;
   overflow-y: auto;
   overflow-x: hidden;
-  background-color: rgba(238, 234, 234, 0.996);
+  background-color: #fff;
   border: 2px groove #000;
   border-radius: 8px;
   z-index: 99;
