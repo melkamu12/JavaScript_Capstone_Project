@@ -33,7 +33,8 @@
 <hr><hr>
 <!-- PROJECT DESCRIPTION -->
 
-# <b>leaderboard  📖</b><a name="about-project"></a>
+# <b>Javascript Capstone Project
+  📖</b><a name="about-project"></a>
 
 The JavaScript capstone project is about building your own web application based on an external API. You will select an API that provides data about a topic that you like and then build the webapp around it.A home page showing a list of items that you can "like."
 A popup window with more data about an item that you can use to comment on it or reserve it for a period of time.
